@@ -1,0 +1,4 @@
+test_debug_message: "test_debug_message in defaults"
+service_debug_message: "service_debug_message in defaults"
+test_debug_message2: "test_debug_message2 in defaults"
+service_debug_message2: "service_debug_message2 in defaults"

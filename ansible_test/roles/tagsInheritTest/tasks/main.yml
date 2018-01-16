@@ -1,0 +1,17 @@
+# http://docs.ansible.com/ansible/latest/playbooks_tags.html
+---
+- name: Test of tags inheritance_ service+test 
+  debug: 
+    msg: "tags : test, service {{ test_debug_message }} {{ service_debug_message }}"
+  tags: [test,service]
+
+- name: Test of tags inheritance_ service
+  debug:
+    msg: "tags only service {{ service_debug_message }}" 
+  tags: [service]
+
+- name: Test of tags inheritance_ test
+  debug:
+    msg: "tags only test {{ test_debug_message }}"
+  tags: [test]
+...

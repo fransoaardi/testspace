@@ -1,0 +1,24 @@
+# Ansible Docs :
+# http://docs.ansible.com/ansible/latest/playbooks_tags.html
+#
+# Usage : 
+# ansible-playbook tagsInheritTest.yml --list-tasks
+#
+# Result:
+# playbook: tagsTest.yml
+#  play #1 (localhost): localhost	TAGS: []
+#    tasks:
+#      tagsInheritTest : Test of tags inheritance_ service+test	TAGS: [service, tagsInheritTest, test]
+#      tagsInheritTest : Test of tags inheritance_ service	TAGS: [service, tagsInheritTest]
+#      tagsInheritTest : Test of tags inheritance_ test	        TAGS: [tagsInheritTest, test]
+#
+# tags on high_level [tagsTest] is inherited to low_level (tasks in roles/tagsTest/tasks/main.yml)
+# call by tags 'tagsInheritTest' will run all tasks 
+# call by tags 'test' will run service+test and test 
+# call by tags 'service' will run service+test and service
+
+---
+- hosts: localhost 
+  roles:
+  - { role: tagsInheritTest, tags: ['tagsInheritTest'] }
+...

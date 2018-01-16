@@ -1,0 +1,28 @@
+# http://docs.ansible.com/ansible/latest/playbooks_tags.html
+
+# Usage : 
+# ansible-playbook tagsTest.yml --tags "test"
+# ansible-playbook tagsTest.yml --skip-tags "test"
+# ansible-playbook tagsTest.yml --list-tags
+# ansible-playbook tagsTest.yml --list-tasks
+
+---
+- hosts: localhost 
+  tasks:
+    - debug: 
+        msg: "tags service and test"
+      tags:
+        - test
+        - service
+#     tags: [test,service]
+    - debug:
+        msg: "tags only service"
+      tags:
+        - service
+#     tags: [service]
+    - debug:
+        msg: "tags only test"
+      tags:
+        - test
+#     tags: [test]
+...
