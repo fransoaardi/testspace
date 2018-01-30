@@ -2,6 +2,21 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+/*
+    Huffman Algorithm
+
+    - https://en.wikipedia.org/wiki/Huffman_coding
+    - https://www.geeksforgeeks.org/huffman-decoding/
+
+    문자열의 빈도 역순으로 정렬하여
+    가장 빈도가 높은 문자열은 짧은 값, 낮은 문자열을 상대적으로 긴 값을 주어 압축하는 알고리즘
+
+    tree를 구현하여 encode/decode 하는데 사용한다.
+
+
+ */
+
+
 public class Main {
 
     static HashMap<String, String> encodeMap = new HashMap<>();
