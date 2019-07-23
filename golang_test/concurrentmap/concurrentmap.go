@@ -1,9 +1,9 @@
 package main
 
 import (
-	"sync"
 	"fmt"
 	"strconv"
+	"sync"
 )
 
 func main() {
@@ -14,8 +14,8 @@ func main() {
 	sm.Store("key3", "value3")
 	sm.Store("key4", "value4")
 
-	for i:=0; i<=4; i++{
-		val, ok := sm.Load("key"+strconv.Itoa(i))
+	for i := 0; i <= 4; i++ {
+		val, ok := sm.Load("key" + strconv.Itoa(i))
 		if !ok {
 			fmt.Println("no value inside")
 		} else {

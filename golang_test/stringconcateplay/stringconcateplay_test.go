@@ -1,8 +1,8 @@
 package main
 
 import (
-	"testing"
 	"bytes"
+	"testing"
 )
 
 // Result of  `go test -bench . `
@@ -16,35 +16,35 @@ import (
 //
 
 // Using append to slice
-func BenchmarkAppendString(b *testing.B){
+func BenchmarkAppendString(b *testing.B) {
 	var str []string
-	for i:=0; i<b.N; i++{
+	for i := 0; i < b.N; i++ {
 		str = append(str, "a")
 	}
 }
 
 // Using bytes.Buffer and write
-func BenchmarkBuffWrite(b *testing.B){
+func BenchmarkBuffWrite(b *testing.B) {
 	var buf bytes.Buffer
 	var a = []byte("a")
-	for i:=0; i<b.N; i++{
+	for i := 0; i < b.N; i++ {
 		buf.Write(a)
 	}
 }
 
 // Using bytes.Buffer WriteString
-func BenchmarkBuffWriteString(b *testing.B){
+func BenchmarkBuffWriteString(b *testing.B) {
 	var buf bytes.Buffer
-	for i:=0; i<b.N; i++{
-		buf.WriteString("a")
+	a := "a"
+	for i := 0; i < b.N; i++ {
+		buf.WriteString(a)
 	}
 }
 
 // Using concatenate and very slow
-func BenchmarkConcatString(b *testing.B){
+func BenchmarkConcatString(b *testing.B) {
 	var str string
-	for i:=0; i<b.N; i++{
-		str+="a"
+	for i := 0; i < b.N; i++ {
+		str += "a"
 	}
 }
-

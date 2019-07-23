@@ -1,0 +1,8 @@
+    [tabs]
+        [tabs.alpha]
+            ip = "10.0.0.1"
+            dc = "eqdc10"
+
+        [tabs.beta]
+            ip = "10.0.0.2"
+            dc = "eqdc10"

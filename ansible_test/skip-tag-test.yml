@@ -1,0 +1,13 @@
+# check how to use --skip-tags
+#
+# $ ansible-playbook -i inventory/local skip-tag-test.yml -vv --skip-tags="one,two"
+# $ ansible-playbook -i inventory/local skip-tag-test.yml -vv --skip-tags=one --skip-tags=two
+# $ ansible-playbook -i inventory/local skip-tag-test.yml -vv --skip-tags=one,two
+#
+# expected output: skips tags with both one and two
+# result: skips tags with both one and two
+# conclusion: all commands above work equally.
+---
+- hosts: all
+  roles:
+  - role: skip-tag-test

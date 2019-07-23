@@ -1,0 +1,13 @@
+---
+- name: skip-tags test
+  command: echo one
+  tags: [one]
+
+- name: skip-tags test
+  command: echo two
+  tags: [two]
+
+- name: skip-tags test
+  command: echo one and two
+  tags: [one, two]
+

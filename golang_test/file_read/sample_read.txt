@@ -1,0 +1,13 @@
+Go by Example: Reading Files
+Reading and writing files are basic tasks needed for many Go programs. First we’ll look at some examples of reading files.
+
+Run code
+package main
+import (
+    "bufio"
+    "fmt"
+    "io"
+    "io/ioutil"
+    "os"
+)
+Reading files requires checking most calls for errors. This helper will streamline our error checks below.
