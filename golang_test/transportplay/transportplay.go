@@ -51,7 +51,6 @@ func startLoadTest() {
 		now := time.Now()
 		cnt := atom
 		//log.Printf("Started GET request #%v %v", cnt, now)
-		//resp, err := client.Get("http://localhost:9000/api/channel?q=뉴스")
 		resp, err := client.Get("http://localhost:8080?cnt="+fmt.Sprint(cnt))
 		if err != nil {
 			panic(fmt.Sprintf("Got error: %v , atom : %v %v %v %v", err, cnt, now, time.Now(), time.Since(now)))
